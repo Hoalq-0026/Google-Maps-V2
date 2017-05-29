@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+    <data>
+        <import type="com.technical.googlemapv2.Constant"/>
+        <variable
+            name="radiusSearch"
+            type="float"
+            />
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        >
+
+        <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+        <LinearLayout
+            android:layout_width="@dimen/dp_45"
+            android:layout_height="252dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="@dimen/dp_15"
+            android:layout_marginTop="@dimen/dp_9"
+            android:background="@drawable/bg_radius_list_search_by_map"
+            android:orientation="vertical"
+            >
+            <LinearLayout
+                android:id="@+id/radius_search_all"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@{radiusSearch == Constant.RADIUS_ALL ? @drawable/bg_top_radius_list_selected:@drawable/bg_top_radius_list_normal}"
+                android:gravity="center"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:text="@string/search_map_allkm"
+                    android:textColor="@{radiusSearch == Constant.RADIUS_ALL ? @color/white:@color/warm_grey}"
+                    android:textSize="@dimen/sp_13"
+                    />
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_1"
+                android:background="@color/white_two"
+                />
+            <LinearLayout
+                android:id="@+id/radius_search_30km"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@{radiusSearch == Constant.RADIUS_30KM  ? @color/dull_teal:@color/white}"
+                android:gravity="center"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:text="@string/search_map_30km"
+                    android:textColor="@{radiusSearch == Constant.RADIUS_30KM  ? @color/white:@color/warm_grey}"
+                    android:textSize="@dimen/sp_13"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="bottom"
+                    android:text="@string/search_map_km_unit"
+                    android:textColor="@{radiusSearch == Constant.RADIUS_30KM  ? @color/white:@color/warm_grey}"
+                    android:textSize="@dimen/sp_9"
+                    />
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_1"
+                android:background="@color/white_two"
+                />
+            <LinearLayout
+                android:id="@+id/radius_search_10km"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@{radiusSearch == Constant.RADIUS_10KM  ? @color/dull_teal:@color/white}"
+                android:gravity="center"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="bottom"
+                    android:text="@string/search_map_10km"
+                    android:textColor="@{radiusSearch == Constant.RADIUS_10KM ? @color/white:@color/warm_grey}"
+                    android:textSize="@dimen/sp_13"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:text="@string/search_map_km_unit"
+                    android:textColor="@{radiusSearch == Constant.RADIUS_10KM  ? @color/white:@color/warm_grey}"
+                    android:textSize="@dimen/sp_9"
+                    />
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_1"
+                android:background="@color/white_two"
+                />
+            <LinearLayout
+                android:id="@+id/radius_search_5km"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@{radiusSearch == Constant.RADIUS_5KM  ? @color/dull_teal:@color/white}"
+                android:gravity="center"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:text="@string/search_map_5km"
+                    android:textColor="@{radiusSearch == Constant.RADIUS_5KM  ? @color/white:@color/warm_grey}"
+                    android:textSize="@dimen/sp_13"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="bottom"
+                    android:text="@string/search_map_km_unit"
+                    android:textColor="@{radiusSearch == Constant.RADIUS_5KM  ? @color/white:@color/warm_grey}"
+                    android:textSize="@dimen/sp_9"
+                    />
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_1"
+                android:background="@color/white_two"
+                />
+            <LinearLayout
+                android:id="@+id/radius_search_3km"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@{radiusSearch == Constant.RADIUS_3KM  ? @color/dull_teal:@color/white}"
+                android:gravity="center"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:text="@string/search_map_3km"
+                    android:textColor="@{radiusSearch == Constant.RADIUS_3KM  ? @color/white:@color/warm_grey}"
+                    android:textSize="@dimen/sp_13"
+
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="bottom"
+                    android:text="@string/search_map_km_unit"
+                    android:textColor="@{radiusSearch == Constant.RADIUS_3KM  ? @color/white:@color/warm_grey}"
+                    android:textSize="@dimen/sp_9"
+                    />
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_1"
+                android:background="@color/white_two"
+                />
+            <LinearLayout
+                android:id="@+id/radius_search_15km"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@{radiusSearch == Constant.RADIUS_1_5KM  ? @drawable/bg_bottom_radius_list_selected:@drawable/bg_bottom_radius_list_normal}"
+                android:gravity="center"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:text="@string/search_map_1.5km"
+                    android:textColor="@{radiusSearch == Constant.RADIUS_1_5KM  ? @color/white:@color/warm_grey}"
+                    android:textSize="@dimen/sp_13"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="bottom"
+                    android:text="@string/search_map_km_unit"
+                    android:textColor="@{radiusSearch == Constant.RADIUS_1_5KM ? @color/white:@color/warm_grey}"
+                    android:textSize="@dimen/sp_9"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>
